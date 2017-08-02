@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Mod3Class1</string>
+    <string name="titulo">Titulo</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="latitud">Latitud</string>
+    <string name="longitud">Longitud</string>
+    <string name="grabar">Grabar</string>
+    <string name="ver_mapa">Ver Mapa</string>
+
+    <string name="api_map">AIzaSyBwiT3w85EpM5p9iPRyIMSPAcuf9fH1Aho</string>
+</resources>
