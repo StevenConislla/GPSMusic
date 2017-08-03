@@ -20,7 +20,7 @@ public class SentenciaSQL {
     public static void registrar(Ubicaciones ubicaciones){
         Realm realm=Realm.getDefaultInstance();
         realm.beginTransaction();
-        realm.copyToRealm(ubicaciones);
+        realm.copyToRealmOrUpdate(ubicaciones);
         realm.commitTransaction();
     }
 
@@ -38,6 +38,15 @@ public class SentenciaSQL {
         */
         return cantidad+1;
 
+    }
+
+    public static void eliminar(long id){
+        Realm realm=Realm.getDefaultInstance();
+        realm.beginTransaction();
+        //Para convetir el query que te manda a la clase ubicaciones, como la quieres tener
+        Ubicaciones ubicaciones=realm.where(Ubicaciones.class).equalTo("id",id).findFirst();
+        ubicaciones.deleteFromRealm();
+        realm.commitTransaction();
     }
 
 }

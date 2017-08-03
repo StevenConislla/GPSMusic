@@ -29,24 +29,29 @@
             android:id="@+id/etLatitud"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:hint="@string/latitud" />
 
         <EditText
             android:id="@+id/etLongitud"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:hint="@string/longitud" />
+
+        <Button
+            android:id="@+id/btnLocalizar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
 
     </LinearLayout>
 
     <Spinner
+        android:id="@+id/spGenero"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spGenero"
-        android:entries="@array/Generos">
-    </Spinner>
+        android:entries="@array/Generos"></Spinner>
 
     <Button
         android:id="@+id/btnGrabar"
@@ -66,5 +71,7 @@
             android:layout_gravity="center|bottom"
             android:text="@string/ver_mapa" />
     </FrameLayout>
+
+
 
 </LinearLayout>

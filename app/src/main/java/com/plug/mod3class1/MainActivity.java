@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         String descripcion = etDescripcion.getText().toString();
         String latitud = etLatitud.getText().toString();
         String longitud = etLongitud.getText().toString();
-        String genero =spGenero.getSelectedItem().toString();
+        String genero = spGenero.getSelectedItem().toString();
 
         if (titulo.isEmpty()) {
             etTitulo.setError("El campo es requerido");
@@ -83,5 +83,19 @@ public class MainActivity extends AppCompatActivity {
     public void onBtnVerMapaClicked() {
         Intent intent = new Intent(MainActivity.this, DetalleActivity.class);
         startActivity(intent);
+    }
+
+    @OnClick(R.id.btnLocalizar)
+    public void onViewClicked() {
+        GPSTracker gpsTracker=new GPSTracker(MainActivity.this);
+        if(gpsTracker.canGetLocation()){
+            Double latitud=gpsTracker.getLatitude();
+            Double longitud=gpsTracker.getLongitude();
+            etLongitud.setText(longitud.toString());
+            etLatitud.setText(latitud.toString());
+        }
+        else{
+            gpsTracker.showSettingsAlert();
+        }
     }
 }
